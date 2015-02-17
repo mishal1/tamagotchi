@@ -1,0 +1,1 @@
+var Tamagotchi = require('../../src/tamagotchi.js');
