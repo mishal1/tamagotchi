@@ -12,7 +12,7 @@
  };
 
  Tamagotchi.prototype.setName = function(name) {
-   this.name = 'Mishal';
+   this.name = name;
  };
 
  module.exports = Tamagotchi; 
