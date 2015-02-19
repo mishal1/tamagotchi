@@ -41,7 +41,7 @@ grunt.initConfig({
     './test/**/*.js',
     './public/**/*.js'
     ], 
-    tasks: ['jasmine_node', 'jshint', 'express', 'mocha_casperjs']
+    tasks: ['jasmine_node', 'express', 'mocha_casperjs', 'jshint']
   }
 });
 

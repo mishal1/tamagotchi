@@ -33,9 +33,12 @@ describe ('Tamagotchi', function(){
       expect(tamagotchi.age).toEqual(1)
     });
 
-  });
+    it('can set a name', function(){
+      tamagotchi.setName('Mishal')
+      expect(tamagotchi.name).toEqual('Mishal')
+    });
 
-  
+  });
 
 });
 

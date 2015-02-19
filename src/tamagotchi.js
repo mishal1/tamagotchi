@@ -11,4 +11,8 @@
    this.age++;
  };
 
+ Tamagotchi.prototype.setName = function(name) {
+   this.name = 'Mishal';
+ };
+
  module.exports = Tamagotchi; 
