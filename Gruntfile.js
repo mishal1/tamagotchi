@@ -54,4 +54,4 @@ grunt.loadNpmTasks('grunt-contrib-watch');
 grunt.registerTask('default',['express','mocha_casperjs','jasmine_node' ]);
 grunt.registerTask('jasmine', ['jasmine_node']);
 
-}
+};
