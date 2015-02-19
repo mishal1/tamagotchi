@@ -1,12 +1,4 @@
-var Need = require('../../src/needs.js');
-
-describe ('Need', function(){
-
-  var need
-
-  beforeEach(function(){
-    need = new Need();
-  });
+function sharedBehaviourForNeeds(need){
 
   it('has a value of 10 when initialized', function(){
     expect(need.value).toEqual(10)
@@ -39,4 +31,6 @@ describe ('Need', function(){
     expect(need.value).toEqual(10)
   });
 
-});
+};
+
+module.exports = sharedBehaviourForNeeds;
