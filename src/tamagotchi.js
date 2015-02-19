@@ -1,13 +1,15 @@
- function Tamagotchi(){
-   this.age = 0;
- }
+function Tamagotchi(happiness, tiredness, fullness, hunger){
+  this.age = 0;
+  this.needs = [happiness, tiredness, fullness, hunger];
 
- Tamagotchi.prototype.increaseAge = function() {
-   this.age++;
- };
+}
 
- Tamagotchi.prototype.setName = function(name) {
-   this.name = name;
- };
+Tamagotchi.prototype.increaseAge = function() {
+  this.age++;
+};
 
- module.exports = Tamagotchi; 
+Tamagotchi.prototype.setName = function(name) {
+  this.name = name;
+};
+
+module.exports = Tamagotchi;
