@@ -14,4 +14,8 @@ User.prototype.playWithTamagotchi = function() {
   this.tamagotchi.needs[1].increase();
 };
 
+User.prototype.putTamagotchiToBed = function() {
+  this.tamagotchi.needs[1].decrease();
+};
+
 module.exports = User;

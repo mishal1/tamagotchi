@@ -66,4 +66,9 @@ describe ('User', function(){
 
   });
 
+  it('when a user puts their tamagotchi to bed, the tamagotchis tiredness decreases', function(){
+    user.putTamagotchiToBed()
+    expect(user.tamagotchi.needs[1].value).toEqual(4)
+  });
+
 });
