@@ -18,4 +18,8 @@ User.prototype.putTamagotchiToBed = function() {
   this.tamagotchi.needs[1].decrease();
 };
 
+User.prototype.makeTamagotchiPoop = function() {
+  this.tamagotchi.needs[2].decrease();
+};
+
 module.exports = User;

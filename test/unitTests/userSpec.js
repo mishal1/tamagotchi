@@ -71,4 +71,9 @@ describe ('User', function(){
     expect(user.tamagotchi.needs[1].value).toEqual(4)
   });
 
+    it('when a user makes their tamagotchi poop, the tamagotchis fullness decreases', function(){
+    user.makeTamagotchiPoop()
+    expect(user.tamagotchi.needs[2].value).toEqual(4)
+  });
+
 });
