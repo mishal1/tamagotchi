@@ -9,10 +9,10 @@ describe ('Tamagotchi', function(){
   var tamagotchi, happiness, tiredness, fullness, hunger;
 
   beforeEach(function(){
-    happiness = jasmine.createSpyObj('happiness',['value'])
-    tiredness = jasmine.createSpyObj('tiredness',['value'])
-    fullness = jasmine.createSpyObj('fullness',['value'])
-    hunger = jasmine.createSpyObj('hunger',['value'])
+    happiness = {value: 0}
+    tiredness = {value: 10}
+    fullness = {value: 10}
+    hunger = {value: 10}
     tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
   });
 
@@ -32,6 +32,19 @@ describe ('Tamagotchi', function(){
   it('can set a name', function(){
     tamagotchi.setName('Mishal')
     expect(tamagotchi.name).toEqual('Mishal')
+  });
+
+  it('is alive when created', function(){
+    expect(tamagotchi.alive).toEqual(true)
+  });
+
+  describe('if the value for all needs are 0', function(){
+
+    it('it will die', function(){
+      tamagotchi.checkIfAlive()
+      expect(tamagotchi.alive).toEqual(false)
+    });
+
   });
 
 });
