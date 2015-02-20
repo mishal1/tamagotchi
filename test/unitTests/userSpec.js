@@ -40,12 +40,28 @@ describe ('User', function(){
       user.feedTamagotchi()
     });
 
-    it('their hunger decreases', function(){
+    it('the tamagotchis hunger decreases', function(){
       expect(user.tamagotchi.needs[3].value).toEqual(4)
     });
 
-    it('their fullness increases', function(){
+    it('the tamagotchis fullness increases', function(){
       expect(user.tamagotchi.needs[2].value).toEqual(8)
+    });
+
+  });
+
+  describe('when a user plays with their tamagotchi', function(){
+
+    beforeEach(function(){
+      user.playWithTamagotchi()
+    });
+
+    it('the tamagotchis happiness increases', function(){
+      expect(user.tamagotchi.needs[0].value).toEqual(8)
+    });
+
+    it('the tamagotchis tiredness increases', function(){
+      expect(user.tamagotchi.needs[1].value).toEqual(8)
     });
 
   });
