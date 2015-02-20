@@ -1,8 +1,4 @@
 var Tamagotchi = require('../../src/tamagotchi.js');
-var Happiness = require('../../src/happiness.js');
-var Tiredness = require('../../src/tiredness.js');
-var Fullness = require('../../src/fullness.js');
-var Hunger = require('../../src/hunger.js');
 
 describe ('Tamagotchi', function(){
 
