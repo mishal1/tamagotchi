@@ -1,7 +1,13 @@
-.egg{
+.egg {
   text-align: center;
+  padding-right: 50%;
 }
 
 #start-egg {
+  position: absolute;
+}
+
+.egg img {
   height: 80%;
+  position: absolute;
 }
