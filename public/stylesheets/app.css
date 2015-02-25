@@ -1,0 +1,88 @@
+article {
+  height: 400px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+.egg-crack {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  display: block;
+}
+
+#tamagotchi {
+  height: 160px;
+  width: 160px;
+  position: absolute;
+  display: block;
+  top: 120;
+  left: 110;
+  transform: rotate(17deg);
+}
+
+#first-half{
+  height: 180px;
+  width: 190px;
+  position: absolute;
+  top: 65;
+  left: 89;
+}
+
+#second-half{
+  height: 180px;
+  width: 190px;
+  position: absolute;
+  top: 165;
+  left: 89;
+}
+
+#greeting {
+  display: none;
+  font-size: 65px;
+  position: relative;
+  padding-left: 40%;
+  padding-right: 40%;
+}
+
+#ask-name {
+  display: none;
+  font-size: 65px;
+  position: relative;
+  left: 20px;
+}
+
+.text {
+  height: 150px;
+  width: 100%;
+  display: inline;
+  position: absolute;
+  top: -99px;
+  padding: 5px;
+}
+
+input {
+  display: none;
+  width: 100%;
+  position: relative;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid;
+  font-size: 20px;
+}
+
+input:focus {
+    outline:none;
+}
+
+#user-input {
+  position: relative;
+  height: 20px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}

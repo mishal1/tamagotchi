@@ -27,7 +27,29 @@ function eggCrackingAnimation(number){
       $('.egg-crack').remove()
       $('.egg').append('<img id="tamagotchi" src="/img/tamagotchi.png"/>')
       $('.egg').append('<img id="first-half" src="/img/first-half.svg"/>')
-      $('.egg').append('<img id="second-half" src="/img/second-half.svg"/>') 
+      $('.egg').append('<img id="second-half" src="/img/second-half.svg"/>')
+      $('#first-half').addClass('rotateOutUpRight animated')
+      bounceDownElement('#greeting', hideHeader)
     }
   }, 300)
 }
+
+function bounceDownElement(text, callback){
+  $(text).css('display','inline')
+  $(text).addClass('bounceInDown animated')
+  if(callback) callback(text) 
+}
+
+function hideHeader(text){
+  setTimeout(function(){
+    console.log('hide')
+    $(text).hide()
+    bounceDownElement('#ask-name', bounceUpInput)
+  }, 1000)
+}
+
+function bounceUpInput(text){
+  $('input').show()
+  $('input').addClass('bounceInUp animated')
+}
+
