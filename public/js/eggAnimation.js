@@ -6,24 +6,28 @@ function continousEggShaking(){
   $('#start-egg').removeClass('animated shake');
   setTimeout(function(){
     $('#start-egg').addClass('animated shake');
-  }, 1000)
+  }, 300)
 }
 
 
 $('#start-egg').click(function(){
   clearInterval(eggShaking)
-  $('#start-egg').remove()
-  $('.egg').append('<img src="/img/egg-crack1.svg"/>')
+  $('.egg-crack').remove()
+  $('.egg').append('<img src="/img/egg-crack1.svg" class="egg-crack"/>')
   var number = 2
   eggCrackingAnimation(number)
 });
 
 function eggCrackingAnimation(number){
   setTimeout(function(){
-  console.log('hello')
-  $('img').remove()
-  $('.egg').append('<img src="/img/egg-crack'+ number +'.svg"/>')
-  number += 1
-  if(number < 14)eggCrackingAnimation(number)
-}, 800)
+    $('.egg').append('<img class="egg-crack" src="/img/egg-crack'+ number +'.svg"/>')
+    number += 1
+    if(number < 11){eggCrackingAnimation(number)}
+    else {
+      $('.egg-crack').remove()
+      $('.egg').append('<img id="tamagotchi" src="/img/tamagotchi.png"/>')
+      $('.egg').append('<img id="first-half" src="/img/first-half.svg"/>')
+      $('.egg').append('<img id="second-half" src="/img/second-half.svg"/>') 
+    }
+  }, 300)
 }
