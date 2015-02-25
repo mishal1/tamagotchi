@@ -29,6 +29,7 @@ function eggCrackingAnimation(number){
       $('.egg').append('<img id="first-half" src="/img/first-half.svg"/>')
       $('.egg').append('<img id="second-half" src="/img/second-half.svg"/>')
       $('#first-half').addClass('rotateOutUpRight animated')
+      $('#second-half').addClass('rotateOutDownRight animated')
       bounceDownElement('#greeting', hideHeader)
     }
   }, 300)
