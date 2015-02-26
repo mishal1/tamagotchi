@@ -1,4 +1,4 @@
-var Need = require('./needs.js');
+var Need = require('./needs');
 
 function Happiness(){}
 

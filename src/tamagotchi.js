@@ -2,7 +2,12 @@ function Tamagotchi(happiness, tiredness, fullness, hunger){
   this.age = 0;
   this.needs = [happiness, tiredness, fullness, hunger];
   this.alive = true;
-  setInterval(this.passageOfTime, 30000);
+}
+
+Tamagotchi.prototype.init = function() {
+  var _this = this;
+  setInterval(function() {
+    _this.passageOfTime(_this)}, 30000);
 }
 
 Tamagotchi.prototype.increaseAge = function() {
@@ -21,11 +26,11 @@ Tamagotchi.prototype.checkAllNeeds = function() {
   return this.needs[0].value === 0 && this.needs[1].value === 10 && this.needs[2].value === 10 && this.needs[3].value === 10;
 };
 
-Tamagotchi.prototype.passageOfTime = function() {
-  this.needs[0].decrease();
-  this.needs[1].increase();
-  this.needs[2].increase();
-  this.needs[3].increase();
+Tamagotchi.prototype.passageOfTime = function(_this) {
+  _this.needs[0].decrease();
+  _this.needs[1].increase();
+  _this.needs[2].increase();
+  _this.needs[3].increase();
 };
 
 module.exports = Tamagotchi;

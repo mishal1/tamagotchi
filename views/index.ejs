@@ -16,29 +16,62 @@
       <article id='ask-name'>What do you want to name me?</article>
     </header>
 
+    <header class='text' id='needs'>
+      
+      <section id='left'>
+         <text class='need'>
+          HAPPINESS
+        </text>
+        <text class='need'>
+          TIREDNESS
+        </text class='need'>
+        <br>
+        <text id='left-progress'>
+          <bar class='progress-bar'>
+            <span id='happiness-meter'></span>
+          </bar>
+          <bar id ='right-progress' class='progress-bar'>
+            <span id='tiredness-meter'></span>
+          </bar>
+        </text>
+      </section>
+
+      <b><text id='name'>Mishal</text></b>
+
+      <section id='right'>
+        <text id='fullness' class='need'>
+          FULLNESS
+        </text>
+        <text id='hunger' class='need'>
+          HUNGER
+        </text>
+        <bar id='other-progress' class='progress-bar'>
+          <span id='fullness-meter'></span>
+        </bar>
+        <bar id='left-progress' class='progress-bar'>
+          <span id='hunger-meter'></span>
+        </bar>
+      </section>
+
+    </header>
+
     <article class='egg'>
       <img class='egg-crack' id='start-egg' src="/img/egg-start.svg"/>
     </article>
 
     <section id='user-input'>
-      <input id='name' type='text'>
-      <button id='clickme'>Click</button>
+      <input type='text'>
+    </section>
+
+    <section id='buttons'>
+      <button>EAT</button>
+      <button>PLAY</button>
+      <button>POOP</button>
+      <button>SLEEP</button>
     </section>
 
     <script type="text/javascript" src="/js/eggAnimation.js"></script>
-    <script> 
-        $('#clickme').on('click', function() {
-
-          $.ajax({
-          url: '/name',
-          type: 'POST',
-          data: {name: $('#name').val()},
-          success: function(data) {
-            $('.egg').append('<p>' + data.name + '</p>')
-          }
-         })
-        });
-    </script>
+    <script type="text/javascript" src="/js/play.js"></script>
 
   </body>
 
