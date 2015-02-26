@@ -21,10 +21,24 @@
     </article>
 
     <section id='user-input'>
-      <input type='text'>
+      <input id='name' type='text'>
+      <button id='clickme'>Click</button>
     </section>
 
     <script type="text/javascript" src="/js/eggAnimation.js"></script>
+    <script> 
+        $('#clickme').on('click', function() {
+
+          $.ajax({
+          url: '/name',
+          type: 'POST',
+          data: {name: $('#name').val()},
+          success: function(data) {
+            $('.egg').append('<p>' + data.name + '</p>')
+          }
+         })
+        });
+    </script>
 
   </body>
 
