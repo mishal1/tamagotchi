@@ -43,7 +43,6 @@ function bounceDownElement(text, callback){
 
 function hideHeader(text){
   setTimeout(function(){
-    console.log('hide')
     $(text).hide()
     bounceDownElement('#ask-name', bounceUpInput)
   }, 1000)

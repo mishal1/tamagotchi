@@ -4,13 +4,13 @@ function sharedBehaviourForNeeds(need){
     expect(need.value).toEqual(10)
   });
 
-  describe('is decreased', function(){
+  describe('', function(){
 
     beforeEach(function(){
       need.decrease()
     });
 
-    it('by 2', function(){
+    it('can decrease by 2', function(){
       expect(need.value).toEqual(8)
     });
 

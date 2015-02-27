@@ -17,9 +17,8 @@ describe('integration', function(){
     fullness = new Fullness();
     hunger = new Hunger();
     tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
-    user.hatch(tamagotchi)
-    user.nameTamagotchi('Mishal')
-    // user.tamagotchi.init();
+    user.hatch(tamagotchi);
+    user.nameTamagotchi('Mishal');
   });
 
   it('the user hatches their tamagotchi', function(){
@@ -67,11 +66,9 @@ describe('integration', function(){
     expect(user.tamagotchi.needs[1].value).toEqual(4)
   });
 
-    it('when a user makes their tamagotchi poop, the tamagotchis fullness decreases', function(){
+  it('when a user makes their tamagotchi poop, the tamagotchis fullness decreases', function(){
     user.makeTamagotchiPoop()
     expect(user.tamagotchi.needs[2].value).toEqual(4)
   });
-
-});
 
 });

@@ -35,7 +35,6 @@ describe('homepage', function(){
 
     casper.waitUntilVisible('#greeting', function(){
       '#greeting'.should.be.visible
-      console.log('working')
       expect('#greeting').to.contain.text('Hello!')
     }, function(){
       console.log('FAIL')
@@ -51,7 +50,6 @@ describe('homepage', function(){
 
     casper.waitUntilVisible('#ask-name', function(){
       '#ask-name'.should.be.visible
-      console.log('working')
       expect('#ask-name').to.contain.text('What do you want to name me?')
     }, function(){
       console.log('FAIL')
@@ -67,7 +65,6 @@ describe('homepage', function(){
 
     casper.waitUntilVisible('input', function(){
       'input'.should.be.visible
-      console.log('working')
     }, function(){
       console.log('FAIL')
     }, 9000);

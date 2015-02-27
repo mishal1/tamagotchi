@@ -29,14 +29,14 @@ $('button').click(function(){
     type: 'POST',
     data: {choice: $(this).data('pick')},
     success: function(data){
-      console.log(data.happiness)
-      console.log(data.tiredness)
-      console.log(data.fullness)
-      console.log(data.hunger)
-      $('#happiness-meter').css('width', data.happiness.toString())
-      $('#tiredness-meter').css('width', data.tiredness.toString())
-      $('#fullness-meter').css('width', data.fullness.toString())
-      $('#hunger-meter').css('width', data.hunger.toString())
+      updateMeters(data)
     }
   })
 })
+
+function updateMeters(data){
+  $('#happiness-meter').css('width', data.happiness.toString() + '%')
+  $('#tiredness-meter').css('width', data.tiredness.toString() + '%')
+  $('#fullness-meter').css('width', data.fullness.toString() + '%')
+  $('#hunger-meter').css('width', data.hunger.toString() + '%')
+}

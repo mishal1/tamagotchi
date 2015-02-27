@@ -26,6 +26,7 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 
 app.get('/', function(request, response){
   user = new User()
+  console.log(user)
   response.render('index');
 });
 
@@ -43,22 +44,50 @@ app.post('/name', function(req, res) {
 })
 
 app.post('/pick', function(req, res){
-  var userChoice = {
-    eat: user.feedTamagotchi(),
-    sleep: user.putTamagotchiToBed(),
-    poop: user.makeTamagotchiPoop(),
-    play: user.playWithTamagotchi()
+  // var userChoice = {
+  //   eat: user.feedTamagotchi(),
+  //   sleep: user.putTamagotchiToBed(),
+  //   poop: user.makeTamagotchiPoop(),
+  //   play: user.playWithTamagotchi()
+  // }
+  // console.log(req.body.choice)
+  // userChoice[req.body.choice]
+
+  userChooses(req.body.choice)
+
+  var item = needsLevels()
+
+  res.send(item)
+})
+
+app.post('/intervals', function(req, res){
+
+});
+
+function userChooses(need){
+  if(need === 'eat'){
+    user.feedTamagotchi()
   }
-  userChoice[req.body.choice]
+  if(need === 'sleep'){
+    user.putTamagotchiToBed()
+  }
+  if(need === 'poop'){
+    user.makeTamagotchiPoop()
+  }
+  if(need === 'play'){
+    user.playWithTamagotchi()
+  }
+}
+
+function needsLevels(){
   var item = {
     happiness: user.tamagotchi.needs[0].value * 10,
     tiredness: user.tamagotchi.needs[1].value * 10,
     fullness: user.tamagotchi.needs[2].value * 10,
     hunger: user.tamagotchi.needs[3].value * 10
   }
-  console.log(item)
-  res.send(item)
-})
+  return item
+}
 
 server.listen(port, function(){
   console.log("Server listening on port 3000");
