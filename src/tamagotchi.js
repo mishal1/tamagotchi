@@ -7,8 +7,8 @@ function Tamagotchi(happiness, tiredness, fullness, hunger){
 Tamagotchi.prototype.init = function() {
   var _this = this;
   setInterval(function() {
-    _this.passageOfTime(_this)}, 30000);
-}
+    _this.passageOfTime(_this);}, 30000);
+};
 
 Tamagotchi.prototype.increaseAge = function() {
   this.age++;

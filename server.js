@@ -42,6 +42,24 @@ app.post('/name', function(req, res) {
   res.send(name)
 })
 
+app.post('/pick', function(req, res){
+  var userChoice = {
+    eat: user.feedTamagotchi(),
+    sleep: user.putTamagotchiToBed(),
+    poop: user.makeTamagotchiPoop(),
+    play: user.playWithTamagotchi()
+  }
+  userChoice[req.body.choice]
+  var item = {
+    happiness: user.tamagotchi.needs[0].value * 10,
+    tiredness: user.tamagotchi.needs[1].value * 10,
+    fullness: user.tamagotchi.needs[2].value * 10,
+    hunger: user.tamagotchi.needs[3].value * 10
+  }
+  console.log(item)
+  res.send(item)
+})
+
 server.listen(port, function(){
   console.log("Server listening on port 3000");
 });

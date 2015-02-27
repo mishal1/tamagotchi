@@ -1,5 +1,5 @@
 function Need(){
-  this.value = 10;
+  this.value = 6;
 }
 
 Need.prototype.decrease = function() {

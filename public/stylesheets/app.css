@@ -98,7 +98,7 @@ input:focus {
 }
 
 #needs{
-  /*display: none;*/
+  display: none;
   height: 100px;
   width: 100%;
 }

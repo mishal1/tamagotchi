@@ -1,40 +1,36 @@
-var User = require('../../src/user.js');
+var User = require('../../src/user');
+var Tamagotchi = require('../../src/tamagotchi');
+var Need = require('../../src/needs');
+var Fullness = require('../../src/fullness');
+var Happiness = require('../../src/happiness');
+var Hunger = require('../../src/hunger');
+var Tiredness = require('../../src/tiredness');
 
-describe('User', function(){
+describe('integration', function(){
 
   var user, happiness, tiredness, fullness, hunger, tamagotchi;
 
   beforeEach(function(){
-    happiness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    tiredness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    fullness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    hunger = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    tamagotchi = {needs: [happiness, tiredness, fullness, hunger]}
-    user = new User();
+    user = new User;
+    happiness = new Happiness();
+    tiredness = new Tiredness();
+    fullness = new Fullness();
+    hunger = new Hunger();
+    tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
     user.hatch(tamagotchi)
+    user.nameTamagotchi('Mishal')
+    // user.tamagotchi.init();
   });
 
-  it('can hatch the egg', function(){
+  it('the user hatches their tamagotchi', function(){
     expect(user.tamagotchi).toEqual(tamagotchi)
   });
 
-  describe('when a user feeds their tamagotchi', function(){
+  it('can name their tamagotchi', function(){
+    expect(user.tamagotchi.name).toEqual('Mishal')
+  });
+
+  describe('when the user feeds the tamagotchi', function(){
 
     beforeEach(function(){
       user.feedTamagotchi()
@@ -75,5 +71,7 @@ describe('User', function(){
     user.makeTamagotchiPoop()
     expect(user.tamagotchi.needs[2].value).toEqual(4)
   });
+
+});
 
 });

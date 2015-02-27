@@ -53,7 +53,7 @@ describe ('Tamagotchi', function(){
   describe('over time the tamagotchis needs will change', function(){
 
     beforeEach(function(){
-      tamagotchi.passageOfTime()
+      tamagotchi.passageOfTime(tamagotchi)
     });
 
     it('the tamagotchis happiness decreases', function(){

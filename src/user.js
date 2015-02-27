@@ -5,7 +5,7 @@ User.prototype.hatch = function(tamagotchi) {
 };
 
 User.prototype.nameTamagotchi = function(name) {
-  this.tamagotchi.setName(name)
+  this.tamagotchi.setName(name);
 };
 
 User.prototype.feedTamagotchi = function() {
