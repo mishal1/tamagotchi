@@ -26,57 +26,35 @@ app.use(bodyParser.urlencoded({'extended':'true'}));
 
 app.get('/', function(request, response){
   user = new User()
-  console.log(user)
   response.render('index');
 });
 
 app.post('/name', function(req, res) {
-  happiness = new Happiness();
-  tiredness = new Tiredness();
-  fullness = new Fullness();
-  hunger = new Hunger();
-  tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
-  var name = req.body.name;
-  user.hatch(tamagotchi)
-  user.nameTamagotchi(name)
-  user.tamagotchi.init();
+  var name = setUpGame(req.body.name)
   res.send(name)
 })
 
 app.post('/pick', function(req, res){
-  // var userChoice = {
-  //   eat: user.feedTamagotchi(),
-  //   sleep: user.putTamagotchiToBed(),
-  //   poop: user.makeTamagotchiPoop(),
-  //   play: user.playWithTamagotchi()
-  // }
-  // console.log(req.body.choice)
+  
+  console.log(req.body.choice)
   // userChoice[req.body.choice]
-
   userChooses(req.body.choice)
-
   var item = needsLevels()
-
   res.send(item)
 })
 
 app.post('/intervals', function(req, res){
-
+  // console.log(req.body.su)
 });
 
 function userChooses(need){
-  if(need === 'eat'){
-    user.feedTamagotchi()
-  }
-  if(need === 'sleep'){
-    user.putTamagotchiToBed()
-  }
-  if(need === 'poop'){
-    user.makeTamagotchiPoop()
-  }
-  if(need === 'play'){
-    user.playWithTamagotchi()
-  }
+  var userChoice = {
+    'eat': user.feedTamagotchi,
+    'sleep': user.putTamagotchiToBed,
+    'poop': user.makeTamagotchiPoop,
+    'play': user.playWithTamagotchi
+  };
+  userChoice[need].call(user);
 }
 
 function needsLevels(){
@@ -87,6 +65,18 @@ function needsLevels(){
     hunger: user.tamagotchi.needs[3].value * 10
   }
   return item
+}
+
+function setUpGame(name){
+  happiness = new Happiness();
+  tiredness = new Tiredness();
+  fullness = new Fullness();
+  hunger = new Hunger();
+  tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
+  user.hatch(tamagotchi)
+  user.nameTamagotchi(name)
+  // user.tamagotchi.init();
+  return name
 }
 
 server.listen(port, function(){

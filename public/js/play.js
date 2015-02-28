@@ -21,6 +21,7 @@ function startGame(name){
   $('#needs').addClass('bounceInDown animated')
   var capitalized = name.charAt(0).toUpperCase() + name.slice(1)
   $('#name').text(capitalized)
+  updateMetersAtIntervals()
 }
 
 $('button').click(function(){
@@ -32,11 +33,21 @@ $('button').click(function(){
       updateMeters(data)
     }
   })
-})
+});
 
 function updateMeters(data){
   $('#happiness-meter').css('width', data.happiness.toString() + '%')
   $('#tiredness-meter').css('width', data.tiredness.toString() + '%')
   $('#fullness-meter').css('width', data.fullness.toString() + '%')
   $('#hunger-meter').css('width', data.hunger.toString() + '%')
+}
+
+function updateMetersAtIntervals(){
+  setInterval(function(){
+    $.ajax({
+      url: '/intervals',
+      type: 'POST',
+      data: {working: 'working'}
+    })
+  }, 30000)
 }
