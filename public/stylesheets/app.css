@@ -163,6 +163,15 @@ input:focus {
   right: 40px;
 }
 
+#poop-emoji {
+  width: 100px;
+  position: relative;
+  display: inline-block;
+  top: -350px;
+  left: 550px;
+  z-index: -1;
+}
+
 #hunger {
   position: relative;
   right: 15px;

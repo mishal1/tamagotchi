@@ -44,14 +44,14 @@ function ballMovingDown(){
     var string = left.toString()
     $('#ball').css('left', string + 'px')
     left += 18
-  }, 150)
+  }, 100)
 }
 
 function ballMovingUp(top, left){
   setTimeout(function(){
     var tamagotchi = document.getElementById('tamagotchi')
     tamagotchi.src = '/img/tamagotchi.png'
-  },250)  
+  },150)  
   var secondPlay = setInterval(function(){
     if(top === -550){
       clearInterval(secondPlay)
@@ -63,6 +63,30 @@ function ballMovingUp(top, left){
     var string = left.toString()
     $('#ball').css('left', string + 'px')
     left += 18
-  }, 150)
+  }, 100)
 }
+
+$('#poop').click(poop);
+
+function poop(){
+  var tamagotchi = document.getElementById('tamagotchi')
+  tamagotchi.src = '/img/tamagotchi-poop.svg'
+  rollingPoop()
+}
+
+function rollingPoop(){
+  setTimeout(function(){
+    $('body').append('<img id="poop-emoji" src="/img/poop-button.jpg"/>')
+    $('#poop-emoji').addClass('rollIn animated')
+      setTimeout(function(){
+        $('#poop-emoji').remove()
+        var tamagotchi = document.getElementById('tamagotchi')
+        tamagotchi.src = '/img/tamagotchi.png'
+    }, 1000)
+  }, 300)
+}
+
+$('#sleep').click(function(){
+  console.log('sleep')
+})
 
