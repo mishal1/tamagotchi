@@ -3,21 +3,21 @@ $('#eat').click(eatApple);
 function eatApple(){
   var tamagotchi = document.getElementById('tamagotchi')
   tamagotchi.src = '/img/tamagotchi-eat.svg'
-  $('body').append('<img id="apple" src="/img/eat-button.png"/>')
+  $('.egg').append('<img id="apple" src="/img/eat-button.png"/>')
   moveApple()
 }
 
 function moveApple(){
-  var position = -550
+  var position = 0
   var eat = setInterval(function(){
-    if(position === -325){ 
+    if(position === 190){ 
       clearInterval(eat)
       $('#apple').remove()
       tamagotchi.src = '/img/tamagotchi.png'
     }
     var string = position.toString()
     $('#apple').css('top', string + 'px')
-    position += 25
+    position += 19
   }, 150)
 }
 
@@ -28,11 +28,11 @@ function applePosition(){
 $('#play').click(ballMovingDown);
 
 function ballMovingDown(){
-  $('body').append('<img id="ball" src="/img/play-button.png"/>')
-  var top = -550
-  var left = 200
+  $('.egg').append('<img id="ball" src="/img/play-button.png"/>')
+  var top = -10
+  var left = -30
   var firstPlay = setInterval(function(){
-    if(top === -440){
+    if(top === 60){
       var tamagotchi = document.getElementById('tamagotchi')
       tamagotchi.src = '/img/tamagotchi-play.svg'
       clearInterval(firstPlay)
@@ -40,11 +40,11 @@ function ballMovingDown(){
     }
     var string = top.toString()
     $('#ball').css('top', string + 'px')
-    top += 11
+    top += 7
     var string = left.toString()
     $('#ball').css('left', string + 'px')
-    left += 18
-  }, 100)
+    left += 17
+  }, 150)
 }
 
 function ballMovingUp(top, left){
@@ -53,17 +53,17 @@ function ballMovingUp(top, left){
     tamagotchi.src = '/img/tamagotchi.png'
   },150)  
   var secondPlay = setInterval(function(){
-    if(top === -550){
+    if(top === -10){
       clearInterval(secondPlay)
       $('#ball').remove()
     }
     var string = top.toString()
     $('#ball').css('top', string + 'px')
-    top -= 11
+    top -= 7
     var string = left.toString()
     $('#ball').css('left', string + 'px')
-    left += 18
-  }, 100)
+    left += 17
+  }, 150)
 }
 
 $('#poop').click(poop);
@@ -76,17 +76,33 @@ function poop(){
 
 function rollingPoop(){
   setTimeout(function(){
-    $('body').append('<img id="poop-emoji" src="/img/poop-button.jpg"/>')
-    $('#poop-emoji').addClass('rollIn animated')
+    $('.egg').append('<img id="poop-emoji" src="/img/poop-button.jpg"/>')
+    $('#poop-emoji').addClass('fadeIn animated')
       setTimeout(function(){
-        $('#poop-emoji').remove()
+        $('#poop-emoji').addClass('rollOut animated')
         var tamagotchi = document.getElementById('tamagotchi')
         tamagotchi.src = '/img/tamagotchi.png'
+        setTimeout(function(){
+          $('#poop-emoji').remove()
+        }, 1000)
     }, 1000)
   }, 300)
 }
 
 $('#sleep').click(function(){
-  console.log('sleep')
+  var tamagotchi = document.getElementById('tamagotchi')
+  tamagotchi.src = '/img/tamagotchi-sleep.svg'
+  setTimeout(function(){
+    $('.egg').append('<img id="sleep-emoji" src="/img/sleep-button.svg"/>')
+    $('#sleep-emoji').addClass('fadeIn animated')
+    setTimeout(function(){
+      $('#sleep-emoji').addClass('fadeOut animated')
+      setTimeout(function(){
+        var tamagotchi = document.getElementById('tamagotchi')
+        tamagotchi.src = '/img/tamagotchi.png'
+        $('#sleep-emoji').remove()
+      }, 1000)
+    }, 1500)
+  }, 800)
 })
 

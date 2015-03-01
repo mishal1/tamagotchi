@@ -26,6 +26,7 @@ article {
   top: 120;
   left: 110;
   transform: rotate(17deg);
+  z-index: 2;
 }
 
 #first-half{
@@ -167,9 +168,9 @@ input:focus {
   width: 100px;
   position: relative;
   display: inline-block;
-  top: -350px;
-  left: 550px;
-  z-index: -1;
+  top: 180px;
+  left: 260px;
+  z-index: 1;
 }
 
 #hunger {
@@ -194,7 +195,6 @@ a {
   border: 3px solid black;
   position: relative;
   display: inline-block;
-  /*border-radius: 50px;*/
   border-radius: 10px;
   padding: 20px;
   margin: 5px;
@@ -202,15 +202,26 @@ a {
 
 #apple {
   height: 50px;
-  top: -550px;
+  top: 0px;
   position: relative;
   display: block;
-  left: 412px;
+  left: 160px;
+  z-index: 100;
 }
 
 #ball {
   height: 100px;
   position: relative;
-  top: -550px;
-  left: 200px;
+  top: -10px;
+  left: -30px;
+  z-index: 100;
+}
+
+#sleep-emoji {
+  height: 150px;
+  position: relative;
+  display: inline-block;
+  top: 15px;
+  left: 210px;
+  z-index: 10;
 }

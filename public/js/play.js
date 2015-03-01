@@ -24,7 +24,7 @@ function startGame(name){
   updateMetersAtIntervals()
 }
 
-$('a').click(function(){
+$('button').click(function(){
   $.ajax({
     url: '/pick',
     type: 'POST',
