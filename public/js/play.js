@@ -24,7 +24,7 @@ function startGame(name){
   updateMetersAtIntervals()
 }
 
-$('button').click(function(){
+$('a').click(function(){
   $.ajax({
     url: '/pick',
     type: 'POST',
@@ -54,20 +54,3 @@ function updateMetersAtIntervals(){
     })
   }, 30000)
 }
-
-$('#eat').click(function(){
-  var tamagotchi = document.getElementById('tamagotchi')
-  tamagotchi.src = '/img/tamagotchi-eat.svg'
-  $('body').append('<img id="apple" src="/img/eat-button.png"/>')
-    var position = -550
-    var eat = setInterval(function(){
-      if(position === -325){ 
-        clearInterval(eat)
-        $('#apple').remove()
-        tamagotchi.src = '/img/tamagotchi.png'
-      }
-      var string = position.toString()
-      $('#apple').css('top', string)
-      position += 25
-    }, 300)
-});

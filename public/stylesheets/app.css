@@ -198,3 +198,10 @@ a {
   display: block;
   left: 412px;
 }
+
+#ball {
+  height: 100px;
+  position: relative;
+  top: -550px;
+  left: 200px;
+}
