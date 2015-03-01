@@ -44,7 +44,8 @@ app.post('/pick', function(req, res){
 })
 
 app.post('/intervals', function(req, res){
-  // console.log(req.body.su)
+  var item = needsLevels()
+  res.send(item)
 });
 
 function userChooses(need){
@@ -75,7 +76,7 @@ function setUpGame(name){
   tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
   user.hatch(tamagotchi)
   user.nameTamagotchi(name)
-  // user.tamagotchi.init();
+  user.tamagotchi.init();
   return name
 }
 

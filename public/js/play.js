@@ -47,7 +47,10 @@ function updateMetersAtIntervals(){
     $.ajax({
       url: '/intervals',
       type: 'POST',
-      data: {working: 'working'}
+      data: {working: 'working'},
+      success: function(data){
+        updateMeters(data)
+      }
     })
   }, 30000)
 }
