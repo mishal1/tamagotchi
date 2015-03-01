@@ -35,9 +35,6 @@ app.post('/name', function(req, res) {
 })
 
 app.post('/pick', function(req, res){
-  
-  console.log(req.body.choice)
-  // userChoice[req.body.choice]
   userChooses(req.body.choice)
   var item = needsLevels()
   res.send(item)

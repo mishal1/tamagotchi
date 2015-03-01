@@ -175,3 +175,26 @@ span {
   height: 100%;
   width: 60%;
 }
+
+a img {
+  height: 50px;
+  width: 50px;
+}
+
+a {
+  border: 3px solid black;
+  position: relative;
+  display: inline-block;
+  /*border-radius: 50px;*/
+  border-radius: 10px;
+  padding: 20px;
+  margin: 5px;
+}
+
+#apple {
+  height: 50px;
+  top: -550px;
+  position: relative;
+  display: block;
+  left: 412px;
+}
