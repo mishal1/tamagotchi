@@ -19,8 +19,7 @@ function startGame(name){
   $('#buttons').show().addClass('bounceInUp animated')
   $('#needs').css('display','inline')
   $('#needs').addClass('bounceInDown animated')
-  var capitalized = name.charAt(0).toUpperCase() + name.slice(1)
-  $('#name').text(capitalized)
+  $('#name').text(name)
   updateMetersAtIntervals()
 }
 
