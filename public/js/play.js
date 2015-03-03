@@ -6,7 +6,7 @@ $('input').focus(function(){
         type: 'POST',
         data: {name: $('input').val()},
         success: function(data){
-         startGame(data) 
+         startGame(data); 
         }
       })
     }
@@ -14,13 +14,13 @@ $('input').focus(function(){
 })
 
 function startGame(name){
-  $('#ask-name').hide()
-  $('input').hide()
-  $('#buttons').show().addClass('bounceInUp animated')
-  $('#needs').css('display','inline')
-  $('#needs').addClass('bounceInDown animated')
-  $('#name').text(name)
-  updateMetersAtIntervals()
+  $('#ask-name').hide();
+  $('input').hide();
+  $('#buttons').show().addClass('bounceInUp animated');
+  $('#needs').css('display','inline');
+  $('#needs').addClass('bounceInDown animated');
+  $('#name').text(name);
+  updateMetersAtIntervals();
 }
 
 $('button').click(function(){
@@ -29,16 +29,16 @@ $('button').click(function(){
     type: 'POST',
     data: {choice: $(this).data('pick')},
     success: function(data){
-      updateMeters(data)
+      updateMeters(data);
     }
   })
 });
 
 function updateMeters(data){
-  $('#happiness-meter').css('width', data.happiness.toString() + '%')
-  $('#tiredness-meter').css('width', data.tiredness.toString() + '%')
-  $('#fullness-meter').css('width', data.fullness.toString() + '%')
-  $('#hunger-meter').css('width', data.hunger.toString() + '%')
+  $('#happiness-meter').css('width', data.happiness.toString() + '%');
+  $('#tiredness-meter').css('width', data.tiredness.toString() + '%');
+  $('#fullness-meter').css('width', data.fullness.toString() + '%');
+  $('#hunger-meter').css('width', data.hunger.toString() + '%');
 }
 
 function updateMetersAtIntervals(){
@@ -48,7 +48,7 @@ function updateMetersAtIntervals(){
       type: 'POST',
       data: {working: 'working'},
       success: function(data){
-        updateMeters(data)
+        updateMeters(data);
       }
     })
   }, 30000)
