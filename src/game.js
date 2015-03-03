@@ -12,8 +12,8 @@ Game.prototype.setUp = function(name, user) {
   fullness = new Fullness();
   hunger = new Hunger();
   tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
-  user.hatch(tamagotchi)
-  user.nameTamagotchi(name)
+  user.hatch(tamagotchi);
+  user.nameTamagotchi(name);
   user.tamagotchi.init();
 };
 
@@ -33,8 +33,8 @@ Game.prototype.needsLevels = function(user) {
     tiredness: user.tamagotchi.needs[1].value * 10,
     fullness: user.tamagotchi.needs[2].value * 10,
     hunger: user.tamagotchi.needs[3].value * 10
-  }
-  return item
+  };
+  return item;
 };
 
 module.exports = Game;

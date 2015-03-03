@@ -5,7 +5,7 @@ User.prototype.hatch = function(tamagotchi) {
 };
 
 User.prototype.nameTamagotchi = function(name) {
-    var capitalized = name.charAt(0).toUpperCase() + name.slice(1)
+    var capitalized = name.charAt(0).toUpperCase() + name.slice(1);
   this.tamagotchi.setName(capitalized);
 };
 
