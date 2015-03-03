@@ -57,4 +57,3 @@ function bounceUpInput(text){
   $('input').show();
   $('input').addClass('bounceInUp animated');
 }
-
