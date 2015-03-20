@@ -19,7 +19,7 @@
   "devDependencies": {
     "casper-chai": "^0.2.1",
     "casperjs": "^1.1.0-beta3",
-    "chai": "^1.10.0",
+    "chai": "^2.1.2",
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
@@ -28,11 +28,13 @@
     "grunt-mocha": "^0.4.11",
     "grunt-mocha-casperjs": "^1.4.1",
     "grunt-mocha-cli": "^1.11.0",
+    "grunt-mocha-test": "^0.12.7",
     "jasmine-node": "^1.14.5",
     "jshint": "^2.5.11",
-    "mocha": "^2.0.1",
+    "mocha": "^2.2.1",
     "mocha-casperjs": "^0.5.3",
-    "phantomjs": "^1.9.8"
+    "phantomjs": "^1.9.8",
+    "webdriverio": "^2.4.5"
   },
   "dependencies": {
     "body-parser": "^1.12.0",
