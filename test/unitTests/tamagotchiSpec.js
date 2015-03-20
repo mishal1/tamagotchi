@@ -14,60 +14,85 @@ describe ('Tamagotchi', function(){
   });
 
   it('has an age of 0', function(){
-    expect(tamagotchi.age).toEqual(0)
+    expect(tamagotchi.age).toEqual(0);
   });
 
   it('can age', function(){
-    tamagotchi.increaseAge()
-    expect(tamagotchi.age).toEqual(1)
+    tamagotchi.increaseAge();
+    expect(tamagotchi.age).toEqual(1);
   });
 
   it('can set a name', function(){
-    tamagotchi.setName('Mishal')
-    expect(tamagotchi.name).toEqual('Mishal')
+    tamagotchi.setName('Mishal');
+    expect(tamagotchi.name).toEqual('Mishal');
   });
 
   it('is alive when created', function(){
-    expect(tamagotchi.alive).toEqual(true)
+    expect(tamagotchi.alive).toEqual(true);
+  });
+
+  describe('when the tamagotchi eats', function(){
+
+    beforeEach(function(){
+      tamagotchi.eat();
+    });
+
+    it('hunger decreases', function(){
+      expect(hunger.value).toEqual(4);
+    });
+
+    it('fullness increases', function(){
+      expect(fullness.value).toEqual(8);
+    });
+
+  });
+
+  describe('when the tamagotchi plays', function(){
+
+    beforeEach(function(){
+      tamagotchi.play();
+    });
+
+    it('happiness increases', function(){
+      expect(happiness.value).toEqual(8);
+    });
+
+    it('tiredness increases', function(){
+      expect(tiredness.value).toEqual(8);
+    });
+
+  });
+
+  it('when the tamagotchi sleeps, tiredness decreases', function(){
+    tamagotchi.sleep();
+    expect(tiredness.value).toEqual(4);
+  });
+
+  it('when the tamagotchi poops, fullness decreases', function(){
+    tamagotchi.poop();
+    expect(fullness.value).toEqual(4);
   });
 
   describe('over time the tamagotchis needs will change', function(){
 
     beforeEach(function(){
-      tamagotchi.passageOfTime(tamagotchi)
+      tamagotchi.passageOfTime(tamagotchi);
     });
 
     it('the tamagotchis happiness decreases', function(){
-      expect(happiness.value).toEqual(4)
+      expect(happiness.value).toEqual(4);
     });
 
     it('the tamagotchis tiredness increases', function(){
-      expect(tiredness.value).toEqual(8)
+      expect(tiredness.value).toEqual(8);
     });
 
     it('the tamagotchis fullness increases', function(){
-      expect(fullness.value).toEqual(8)
+      expect(fullness.value).toEqual(8);
     });
 
     it('the tamagotchis hunger increases', function(){
-      expect(hunger.value).toEqual(8)
-    });
-
-  });
-
-  describe('if the value for all needs are 0', function(){
-
-    beforeEach(function(){
-      happiness = {value: 0}
-      tiredness = {value: 10}
-      fullness = {value: 10}
-      hunger = {value: 10}
-      tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
-    });
-
-    it('it will die', function(){
-      tamagotchi.checkIfAlive()
-      expect(tamagotchi.alive).toEqual(false)
+      expect(hunger.value).toEqual(8);
     });
 
   });

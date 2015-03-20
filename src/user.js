@@ -10,21 +10,19 @@ User.prototype.nameTamagotchi = function(name) {
 };
 
 User.prototype.feedTamagotchi = function() {
-  this.tamagotchi.hunger.decrease();
-  this.tamagotchi.fullness.increase();
+  this.tamagotchi.eat();
 };
 
 User.prototype.playWithTamagotchi = function() {
-  this.tamagotchi.happiness.increase();
-  this.tamagotchi.tiredness.increase();
+  this.tamagotchi.play();
 };
 
 User.prototype.putTamagotchiToBed = function() {
-  this.tamagotchi.tiredness.decrease();
+  this.tamagotchi.sleep();
 };
 
 User.prototype.makeTamagotchiPoop = function() {
-  this.tamagotchi.fullness.decrease();
+  this.tamagotchi.poop();
 };
 
 module.exports = User;

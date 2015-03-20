@@ -1,5 +1,5 @@
-var Need = require('./needs');
-var Tamagotchi = require('./tamagotchi');
+var Need = require('./needs.js');
+var Tamagotchi = require('./tamagotchi.js');
 
 function Game(){}
 

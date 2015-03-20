@@ -8,8 +8,8 @@ grunt.initConfig({
     },
     all: [
     'Gruntfile.js', 
-    './src/**/*.js',
-    './spec/**/*.js'
+    './src/*.js',
+    './test/**/*.js'
     ]
   },
   jasmine_node: {
