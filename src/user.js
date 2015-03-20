@@ -1,7 +1,7 @@
 function User(){}
 
 User.prototype.hatch = function(tamagotchi) {
-  this.tamagotchi = tamagotchi;
+  this.tamagotchi = tamagotchi.needs;
 };
 
 User.prototype.nameTamagotchi = function(name) {
@@ -10,21 +10,21 @@ User.prototype.nameTamagotchi = function(name) {
 };
 
 User.prototype.feedTamagotchi = function() {
-  this.tamagotchi.needs[3].decrease();
-  this.tamagotchi.needs[2].increase();
+  this.tamagotchi.hunger.decrease();
+  this.tamagotchi.fullness.increase();
 };
 
 User.prototype.playWithTamagotchi = function() {
-  this.tamagotchi.needs[0].increase();
-  this.tamagotchi.needs[1].increase();
+  this.tamagotchi.happiness.increase();
+  this.tamagotchi.tiredness.increase();
 };
 
 User.prototype.putTamagotchiToBed = function() {
-  this.tamagotchi.needs[1].decrease();
+  this.tamagotchi.tiredness.decrease();
 };
 
 User.prototype.makeTamagotchiPoop = function() {
-  this.tamagotchi.needs[2].decrease();
+  this.tamagotchi.fullness.decrease();
 };
 
 module.exports = User;

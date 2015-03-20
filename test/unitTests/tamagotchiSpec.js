@@ -1,35 +1,20 @@
 var Tamagotchi = require('../../src/tamagotchi.js');
+var Need = require('../../src/needs');
 
 describe ('Tamagotchi', function(){
 
   var tamagotchi, happiness, tiredness, fullness, hunger;
 
   beforeEach(function(){
-    happiness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    tiredness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    fullness = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
-    hunger = {
-      value: 6, 
-      increase: function(){this.value += 2}, 
-      decrease: function(){this.value -= 2}
-    }
+    happiness = new Need();
+    tiredness = new Need();
+    fullness = new Need();
+    hunger = new Need();
     tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
   });
 
   it('has object containing the needs', function(){
-    expect(tamagotchi.needs).toEqual([happiness, tiredness, fullness, hunger])
+    expect(tamagotchi.needs).toEqual({"happiness": happiness, "tiredness": tiredness, "fullness": fullness, "hunger": hunger})
   });
 
   it('has an age of 0', function(){
@@ -57,19 +42,19 @@ describe ('Tamagotchi', function(){
     });
 
     it('the tamagotchis happiness decreases', function(){
-      expect(tamagotchi.needs[0].value).toEqual(4)
+      expect(tamagotchi.needs.happiness.value).toEqual(4)
     });
 
     it('the tamagotchis tiredness increases', function(){
-      expect(tamagotchi.needs[1].value).toEqual(8)
+      expect(tamagotchi.needs.tiredness.value).toEqual(8)
     });
 
     it('the tamagotchis fullness increases', function(){
-      expect(tamagotchi.needs[2].value).toEqual(8)
+      expect(tamagotchi.needs.fullness.value).toEqual(8)
     });
 
     it('the tamagotchis hunger increases', function(){
-      expect(tamagotchi.needs[3].value).toEqual(8)
+      expect(tamagotchi.needs.hunger.value).toEqual(8)
     });
 
   });
