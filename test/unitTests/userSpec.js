@@ -18,7 +18,7 @@ describe('User', function(){
 
   it('can name their tamagotchi', function(){
     user.nameTamagotchi('Mishal')
-    expect(user.tamagotchi.name).toEqual('Mishal')
+    expect(tamagotchi.name).toEqual('Mishal')
   });
 
   describe('when a user feeds their tamagotchi', function(){
@@ -28,11 +28,11 @@ describe('User', function(){
     });
 
     it('the tamagotchis hunger decreases', function(){
-      expect(user.tamagotchi.hunger.value).toEqual(4)
+      expect(hunger.value).toEqual(4)
     });
 
     it('the tamagotchis fullness increases', function(){
-      expect(user.tamagotchi.fullness.value).toEqual(8)
+      expect(fullness.value).toEqual(8)
     });
 
   });
@@ -44,23 +44,23 @@ describe('User', function(){
     });
 
     it('the tamagotchis happiness increases', function(){
-      expect(user.tamagotchi.happiness.value).toEqual(8)
+      expect(happiness.value).toEqual(8)
     });
 
     it('the tamagotchis tiredness increases', function(){
-      expect(user.tamagotchi.tiredness.value).toEqual(8)
+      expect(tiredness.value).toEqual(8)
     });
 
   });
 
   it('when a user puts their tamagotchi to bed, the tamagotchis tiredness decreases', function(){
     user.putTamagotchiToBed()
-    expect(user.tamagotchi.tiredness.value).toEqual(4)
+    expect(tiredness.value).toEqual(4)
   });
 
     it('when a user makes their tamagotchi poop, the tamagotchis fullness decreases', function(){
     user.makeTamagotchiPoop()
-    expect(user.tamagotchi.fullness.value).toEqual(4)
+    expect(fullness.value).toEqual(4)
   });
 
 });

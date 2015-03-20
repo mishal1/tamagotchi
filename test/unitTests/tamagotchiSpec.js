@@ -38,19 +38,19 @@ describe ('Tamagotchi', function(){
     });
 
     it('the tamagotchis happiness decreases', function(){
-      expect(tamagotchi.happiness.value).toEqual(4)
+      expect(happiness.value).toEqual(4)
     });
 
     it('the tamagotchis tiredness increases', function(){
-      expect(tamagotchi.tiredness.value).toEqual(8)
+      expect(tiredness.value).toEqual(8)
     });
 
     it('the tamagotchis fullness increases', function(){
-      expect(tamagotchi.fullness.value).toEqual(8)
+      expect(fullness.value).toEqual(8)
     });
 
     it('the tamagotchis hunger increases', function(){
-      expect(tamagotchi.hunger.value).toEqual(8)
+      expect(hunger.value).toEqual(8)
     });
 
   });

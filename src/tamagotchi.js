@@ -3,7 +3,7 @@ function Tamagotchi(happiness, tiredness, fullness, hunger){
   this.happiness = happiness;
   this.tiredness = tiredness;
   this.fullness = fullness;
-  this.hunger = hunger
+  this.hunger = hunger;
   this.alive = true;
 }
 
@@ -37,7 +37,7 @@ Tamagotchi.prototype.passageOfTime = function(_this) {
 };
 
 Tamagotchi.prototype.checkValue = function(need, number) {
-  return need.value === number
+  return need.value === number;
 };
 
 module.exports = Tamagotchi;

@@ -1,17 +1,14 @@
-var Happiness = require('./happiness');
-var Tiredness = require('./tiredness');
-var Fullness = require('./fullness');
-var Hunger = require('./hunger');
+var Need = require('./needs');
 var Tamagotchi = require('./tamagotchi');
 
 function Game(){}
 
 Game.prototype.setUp = function(name, user) {
-  happiness = new Happiness();
-  tiredness = new Tiredness();
-  fullness = new Fullness();
-  hunger = new Hunger();
-  tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
+  this.happiness = new Need();
+  this.tiredness = new Need();
+  this.fullness = new Need();
+  this.hunger = new Need();
+  tamagotchi = new Tamagotchi(this.happiness, this.tiredness, this.fullness, this.hunger);
   user.hatch(tamagotchi);
   user.nameTamagotchi(name);
   user.tamagotchi.init();
@@ -29,10 +26,10 @@ Game.prototype.userChooses = function(need, user) {
 
 Game.prototype.needsLevels = function(user) {
   var item = {
-    happiness: user.tamagotchi.needs[0].value * 10,
-    tiredness: user.tamagotchi.needs[1].value * 10,
-    fullness: user.tamagotchi.needs[2].value * 10,
-    hunger: user.tamagotchi.needs[3].value * 10
+    happiness: this.happiness.value * 10,
+    tiredness: this.tiredness.value * 10,
+    fullness: this.fullness.value * 10,
+    hunger: this.hunger.value * 10
   };
   return item;
 };
