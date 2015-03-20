@@ -56,5 +56,5 @@ $ grunt
 $ npm start
 ```
 
-Visit the webpage [http://localhost:3000](http://localhost:4000/) in your
+Visit the webpage [http://localhost:3000](http://localhost:3000/) in your
 browser.
