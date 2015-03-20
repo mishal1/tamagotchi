@@ -1,5 +1,6 @@
 var User = require('../../src/user.js');
 var Need = require('../../src/needs.js');
+var Tamagotchi = require('../../src/tamagotchi.js');
 
 describe('User', function(){
 
@@ -10,13 +11,14 @@ describe('User', function(){
     tiredness = new Need();
     fullness = new Need();
     hunger = new Need();
-    tamagotchi = {needs: {"happiness": happiness, "tiredness": tiredness, "fullness": fullness, "hunger": hunger}}
+    tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
     user = new User();
     user.hatch(tamagotchi)
   });
 
-  it('can hatch the egg', function(){
-    expect(user.tamagotchi).toEqual({"happiness": happiness, "tiredness": tiredness, "fullness": fullness, "hunger": hunger})
+  it('can name their tamagotchi', function(){
+    user.nameTamagotchi('Mishal')
+    expect(user.tamagotchi.name).toEqual('Mishal')
   });
 
   describe('when a user feeds their tamagotchi', function(){

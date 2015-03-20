@@ -13,10 +13,6 @@ describe ('Tamagotchi', function(){
     tamagotchi = new Tamagotchi(happiness, tiredness, fullness, hunger);
   });
 
-  it('has object containing the needs', function(){
-    expect(tamagotchi.needs).toEqual({"happiness": happiness, "tiredness": tiredness, "fullness": fullness, "hunger": hunger})
-  });
-
   it('has an age of 0', function(){
     expect(tamagotchi.age).toEqual(0)
   });
@@ -42,19 +38,19 @@ describe ('Tamagotchi', function(){
     });
 
     it('the tamagotchis happiness decreases', function(){
-      expect(tamagotchi.needs.happiness.value).toEqual(4)
+      expect(tamagotchi.happiness.value).toEqual(4)
     });
 
     it('the tamagotchis tiredness increases', function(){
-      expect(tamagotchi.needs.tiredness.value).toEqual(8)
+      expect(tamagotchi.tiredness.value).toEqual(8)
     });
 
     it('the tamagotchis fullness increases', function(){
-      expect(tamagotchi.needs.fullness.value).toEqual(8)
+      expect(tamagotchi.fullness.value).toEqual(8)
     });
 
     it('the tamagotchis hunger increases', function(){
-      expect(tamagotchi.needs.hunger.value).toEqual(8)
+      expect(tamagotchi.hunger.value).toEqual(8)
     });
 
   });
