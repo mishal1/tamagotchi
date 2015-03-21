@@ -21,7 +21,7 @@ describe('Homepage', function() {
       .call(done);
   });
 
-  it('it displays a greeting after hatching', function(done){
+  it('displays a greeting after hatching', function(done){
     this.timeout(8000);
     client
       .url('http://localhost:3000')
@@ -33,6 +33,28 @@ describe('Homepage', function() {
     .call(done);
   });
 
-  
+  it('asks user to name their tamagotchi', function(done){
+    this.timeout(8000);
+    client
+      .url('http://localhost:3000')
+      .click('.egg')
+      .waitForVisible('#ask-name', 5000)
+      .getText('#ask-name', function(err, text){
+          expect(text).to.equal('What do you want to name me?');
+      })
+    .call(done);
+  });
+
+  it('a user can enter their name', function(done){
+    this.timeout(8000)
+    client
+      .url('http://localhost:3000')
+      .click('.egg')
+      .waitForVisible('#input', 5000)
+      .pause(2000)
+      .setValue('#input', 'Mishal')
+      .submit('#input')
+    .call(done);
+  });
 
 });
