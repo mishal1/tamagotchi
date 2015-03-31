@@ -83,15 +83,10 @@ describe('Homepage', function() {
 
     describe('when a user feeds their tamagotchi', function(){
 
-      beforeEach(function(done){
-        client
-          .click('#eat')
-        .call(done);  
-      });
-
       it('the hunger meter decreases', function(done){
         this.timeout(8000);
         client
+          .click('#eat')
           .getCssProperty('#hunger-meter', 'width', function(err, width){
             expect(width.value).to.equal('64.390625px');
           })
@@ -101,6 +96,7 @@ describe('Homepage', function() {
       it('the fullness meter increases', function(done){
         this.timeout(8000);
         client
+          .click('#eat')
           .getCssProperty('#fullness-meter', 'width', function(err, width){
             expect(width.value).to.equal('128.796875px');
           })
@@ -110,16 +106,11 @@ describe('Homepage', function() {
     });
 
     describe('when a user plays with their tamagotchi', function(){
-
-      beforeEach(function(done){
-        client
-          .click('#play')
-        .call(done);
-      })
       
       it('the happiness meter increases', function(done){
         this.timeout(8000);
         client
+          .click('#play')
           .getCssProperty('#happiness-meter', 'width', function(err, width){
             expect(width.value).to.equal('128.796875px');
           })
@@ -129,6 +120,7 @@ describe('Homepage', function() {
       it('the tiredness meter increases', function(done){
         this.timeout(8000);
         client
+          .click('#play')
           .getCssProperty('#tiredness-meter', 'width', function(err, width){
             expect(width.value).to.equal('128.796875px');
           })
