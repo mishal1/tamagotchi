@@ -3,9 +3,9 @@ var app = express();
 var server = require('http').createServer(app);
 var bodyParser = require('body-parser');
 var port = process.env.PORT || 3000;
-var Need = require('./src/needs');
-var User = require('./src/user');
-var Game = require('./src/game');
+var Need = require('./src/needs.js');
+var User = require('./src/user.js');
+var Game = require('./src/game.js');
 var util = require('util');
 
 var happiness;
