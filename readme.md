@@ -47,6 +47,7 @@ $ cd tamagotchi
 
 ```sh
 $ npm install
+$ selenium-standalone start
 $ grunt
 ```
 
